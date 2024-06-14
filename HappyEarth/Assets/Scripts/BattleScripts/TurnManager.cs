@@ -13,7 +13,7 @@ public class TurnManager : MonoBehaviour
         Enemy
     }
 
-    [SerializeField] private turnType currentTurn;
+    public turnType currentTurn;
 
     // end of turn enum.
 

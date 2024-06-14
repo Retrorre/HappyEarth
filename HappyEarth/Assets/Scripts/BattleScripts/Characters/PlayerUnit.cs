@@ -15,4 +15,14 @@ public class PlayerUnit : UnitBase
         playerCurHp = playerMaxHp;
         playerAtk = _base.attack;
     }
+
+    public void TakeDamage(int damage)
+    {
+        playerCurHp -= damage;
+        if (playerCurHp < 0) curHp = 0;
+        if (playerCurHp == 0)
+        {
+            Debug.Log(gameObject.name + " is dead.");
+        }
+    }
 }
