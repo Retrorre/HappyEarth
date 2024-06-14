@@ -1,18 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CombatManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public PlayerUnit player;
+    public EnemyUnit enemy;
+
+    //UI
+    [SerializeField] private TMP_Text playerHpText;
+    [SerializeField] private TMP_Text enemyHpText;
+    //
+
+    public void DealDamageToEnemy()
     {
-        
+        int playerAttackDamage = player.attack;
+        enemy.TakeDamage(playerAttackDamage);
+        UpdateUI();
     }
 
-    // Update is called once per frame
-    void Update()
+    void UpdateUI()
     {
-        
+        playerHpText.text = player.curHp + "/" + player.maxHp;
+        enemyHpText.text = enemy.curHp+ "/" + enemy.maxHp;
     }
 }

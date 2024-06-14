@@ -14,6 +14,7 @@ public class TurnManager : MonoBehaviour
     }
 
     [SerializeField] private turnType currentTurn;
+
     // end of turn enum.
 
     public static bool isPlayerTurn;
@@ -30,18 +31,6 @@ public class TurnManager : MonoBehaviour
         currentTurn = turnType.Player;
     }
 
-    private void Awake()
-    {
-        // getting all the units on the battlefield
-        UnitBase[] _unitsInScene = FindObjectsOfType<UnitBase>();
-
-        foreach (UnitBase unit in _unitsInScene)
-        {
-            GameObject obj = unit.gameObject;
-
-            Debug.Log ("Found Object: "+ obj.name);
-        }
-    }
 
     private void Update()
     {
@@ -56,6 +45,7 @@ public class TurnManager : MonoBehaviour
         {
             isPlayerTurn = true;
             attackButton.interactable = true;
+
         }
         else if (currentTurn == turnType.Enemy)
         {
