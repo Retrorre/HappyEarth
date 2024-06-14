@@ -14,16 +14,21 @@ public class CombatManager : MonoBehaviour
     [SerializeField] private TMP_Text enemyHpText;
     //
 
+    private void Awake()
+    {
+        UpdateUI();
+    }
+
     public void DealDamageToEnemy()
     {
-        int playerAttackDamage = player.attack;
+        int playerAttackDamage = player.playerAtk;
         enemy.TakeDamage(playerAttackDamage);
         UpdateUI();
     }
 
     void UpdateUI()
     {
-        playerHpText.text = player.curHp + "/" + player.maxHp;
-        enemyHpText.text = enemy.curHp+ "/" + enemy.maxHp;
+        playerHpText.text = "HP: "+player.playerCurHp + "/" + player.playerMaxHp;
+        enemyHpText.text = "HP: " + enemy.enemyCurHp+ "/" + enemy.enemyMaxHp;
     }
 }

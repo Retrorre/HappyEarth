@@ -947,7 +947,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 694604871}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 733258351}
+        m_TargetAssemblyTypeName: CombatManager, Assembly-CSharp
+        m_MethodName: DealDamageToEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &694604871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -998,6 +1010,7 @@ GameObject:
   - component: {fileID: 701712339}
   - component: {fileID: 701712338}
   - component: {fileID: 701712337}
+  - component: {fileID: 701712340}
   m_Layer: 5
   m_Name: EnemyImage
   m_TagString: Untagged
@@ -1039,11 +1052,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f229fde23e2339c499e6377913172f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayerUnit: 0
   maxHp: 3
   curHp: 0
   attack: 1
-  hpDisplayText: {fileID: 389040312}
 --- !u!114 &701712338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1082,6 +1093,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701712335}
   m_CullTransparentMesh: 1
+--- !u!114 &701712340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701712335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 320856f1395815548a835049ec0c1137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 0
+  curHp: 0
+  attack: 0
+  _base: {fileID: 0}
+  enemyMaxHp: 0
+  enemyCurHp: 0
+  enemyAtk: 0
 --- !u!1 &718960033
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,6 +1307,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90441d77cd74764ead084e2c25c76f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 2014373583}
+  enemy: {fileID: 701712340}
+  playerHpText: {fileID: 1384839958}
+  enemyHpText: {fileID: 389040312}
 --- !u!1 &935796450
 GameObject:
   m_ObjectHideFlags: 0
@@ -1672,6 +1706,7 @@ GameObject:
   - component: {fileID: 2014373581}
   - component: {fileID: 2014373580}
   - component: {fileID: 2014373582}
+  - component: {fileID: 2014373583}
   m_Layer: 5
   m_Name: PlayerImage
   m_TagString: Untagged
@@ -1751,8 +1786,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f229fde23e2339c499e6377913172f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayerUnit: 1
   maxHp: 10
   curHp: 0
   attack: 1
-  hpDisplayText: {fileID: 1384839958}
+--- !u!114 &2014373583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014373578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae0adf12224486f4699b581d60945800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 0
+  curHp: 0
+  attack: 0
+  _base: {fileID: 0}
+  playerMaxHp: 0
+  playerCurHp: 0
+  playerAtk: 0

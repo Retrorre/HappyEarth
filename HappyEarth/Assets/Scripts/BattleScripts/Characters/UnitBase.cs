@@ -12,14 +12,4 @@ public class UnitBase : MonoBehaviour
 
     //
 
-    public void TakeDamage(int damage)
-    {
-        curHp -= damage;
-        if (curHp< 0) curHp = 0;
-        if (curHp == 0)
-        {
-            Debug.Log(gameObject.name + " is dead.");
-        }
-    }
-
 }
